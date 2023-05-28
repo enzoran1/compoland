@@ -1,0 +1,263 @@
+@mixin flex($display: flex, $justify: null, $align: null, $direction: null, $wrap: null) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+  }
+  
+  // Flex Display
+  
+  @mixin D-Flex {
+    @include flex();
+  }
+  
+  // Flex Align
+  
+  @mixin D-Flex-Align($align: center) {
+    @include flex($align: $align);
+  }
+  
+  // Flex Columns
+  
+  @mixin D-Flex-Columns {
+    @include flex($direction: column);
+  }
+  
+  // Flex Center
+  
+  @mixin D-Flex-Center($align: center) {
+    @include flex($justify: center, $align: $align);
+  }
+  
+  @mixin D-Flex-Center-Columns($justify: center) {
+    @include flex($direction: column, $justify: $justify, $align: center);
+  }
+  
+  // Flex Space Around
+  
+  @mixin D-Flex-SpaceAround($align: center) {
+    @include flex($justify: space-around, $align: $align);
+  }
+  
+  @mixin D-Flex-SpaceAround-Columns($align: center) {
+    @include flex($direction: column, $justify: space-around, $align: $align);
+  }
+  
+  // Flex Space Between
+  
+  @mixin D-Flex-SpaceBetween($align: center) {
+    @include flex($justify: space-between, $align: $align);
+  }
+  
+  @mixin D-Flex-SpaceBetween-Columns($align: center) {
+    @include flex($direction: column, $justify: space-between, $align: $align);
+  }
+  
+  // Flex Space Evenly
+  
+  @mixin D-Flex-SpaceEvenly($align: center) {
+    @include flex($justify: space-evenly, $align: $align);
+  }
+  
+  @mixin D-Flex-SpaceEvenly-Columns($align: center) {
+    @include flex($direction: column, $justify: space-evenly, $align: $align);
+  }
+  
+  @mixin D-Flex-SpaceEvenly-Reverse($align: center) {
+    @include flex($justify: space-evenly, $align: $align, $direction: row-reverse);
+  }
+  
+  @mixin D-Flex-SpaceEvenly-Columns-Reverse($align: center) {
+    @include flex($direction: column-reverse, $justify: space-evenly, $align: $align);
+  }
+
+
+
+
+// grid columns
+
+
+
+@mixin grid-columns($columns, $justify: center, $align: center) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    justify-items: $justify;
+    align-items: $align;
+  }
+
+
+
+  // padding and margin
+
+@mixin p($padding...) {
+    padding: $padding;
+}
+@mixin pt($padding...) {
+    padding-top: $padding;
+}
+@mixin pb($padding...) {
+    padding-bottom: $padding;
+    
+}
+@mixin pl($padding...) {
+    padding-left: $padding;
+}
+@mixin pr($padding...) {
+    padding-right: $padding;
+}
+    
+@mixin m($margin...) {
+    margin: $margin;
+}
+@mixin mt($margin...) {
+    margin-top: $margin;
+}
+@mixin mb($margin...) {
+    margin-bottom: $margin;
+}
+@mixin ml($margin...) {
+    margin-left: $margin;
+}
+@mixin mr($margin...) {
+    margin-right: $margin;
+}
+
+
+// width and height
+
+@mixin w($width) {
+    width: $width;
+}
+@mixin h($height) {
+    height: $height;
+}
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin min-w($width) {
+    min-width: $width;
+}
+@mixin min-h($height) {
+    min-height: $height;
+}
+
+@mixin max-w($width) {
+    max-width: $width;
+}
+@mixin max-h($height) {
+    max-height: $height;
+}
+
+@mixin min-wh($width, $height) {
+    min-width: $width;
+    min-height: $height;
+}
+
+@mixin max-wh($width, $height) {
+    max-width: $width;
+    max-height: $height;
+}
+
+
+
+// Raduis
+
+@mixin radius($radius: 13px) {
+    border-radius: $radius;
+}
+
+
+// font-size
+
+
+
+$xxs : 12px;
+$xs : 14px;
+$s : 16px;
+$m : 18px;
+$l : 20px;
+$xl : 24px;
+$xxl : 30px;
+$xxxl : 36px;
+$xxxxl : 42px;
+$xxxxxl : 48px;
+$xxxxxxl : 54px;
+
+@mixin fz($font-size) {
+    font-size: $font-size;
+}
+
+
+// font-weight
+
+@mixin fw($font-weight) {
+    font-weight: $font-weight;
+}
+
+
+
+// font-family
+
+@mixin ff($font-family) {
+    font-family: $font-family;
+}
+
+
+// font-style
+
+@mixin fs($font-style) {
+    font-style: $font-style;
+}
+
+
+// media queries
+  $screens-small: 576px;
+  $screens-medium: 768px;
+  $screens-large: 992px;
+  $screens-xlarge: 1200px;
+  $screens-xxlarge: 1400px;
+  $screens-xxxlarge: 1600px;
+  $screens-xxxxlarge: 1800px;
+
+  // Color
+
+  $primary : #86C232;
+  $primary-transparent : #86c2322f;
+  $white : #fff;
+  $secondary : #001F3F;
+  $success : #2ECC40;
+  $info : #39CCCC;
+  $warning : #FF851B;
+  $danger : #FF4136;
+  $light : #F3F3F3;
+  $dark : #222222;
+  $grey : #6c757d;
+
+  @mixin box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  
+  @mixin color($name) {
+    color: ($name);
+  }
+  
+  @mixin bg($name) {
+    background-color: ($name);
+  }
+  
+  @mixin border-color($name) {
+    border-color: map-get($colors, $name);
+  }
+
+  @mixin br ($border-radius) {
+    border-radius: $border-radius;
+  }
+
+  
+
+
+ 

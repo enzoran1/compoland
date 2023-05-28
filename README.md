@@ -13,16 +13,26 @@ npm install --save compoland
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+// exemple of use
 
-import MyComponent from 'compoland'
-import 'compoland/dist/index.css'
+import { MultipurposeButton } from 'compoland';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+<MultipurposeButton
+    variant="contained"
+    label="Contactez-nous"
+    disabled={false}
+    size="large"
+    uppercase={true}
+    bold={true}
+    icon="send"
+    iconPosition="right"
+    backgroundColor="#3f51b5"
+    textColor="#fff"
+    iconColor="#fff"
+    type='submit'
+    fullWidth={false}
+    onClick={() => console.log('clicked')}
+    />
 ```
 
 ## License
